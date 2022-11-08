@@ -81,7 +81,7 @@
   flex-direction: column;
   width: min-content;
   color: black;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 .text2 > :first-child {
   font-weight: 800;
@@ -107,4 +107,55 @@
 .customers > :first-child {
   font-weight: 800;
   font-size: 2.5rem;
+}
+@media screen and (max-width: 856px) {
+  .text1,
+  .text2 > span:nth-child(2) {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+  .text2 > span:nth-child(1),
+  .traffic > span:nth-child(1),
+  .customers > span:nth-child(1) {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  .blueCircle {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+  }
+  .container {
+    grid-template-areas: "left center center" "right right right";
+  }
+  .container > :first-child {
+    grid-area: left;
+    grid-template-rows: none;
+    gap: 8rem;
+  }
+  .container > :nth-child(2) {
+    grid-area: center;
+  }
+  .container > :nth-child(3) {
+    grid-area: right;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 640px) {
+  .blueCircle {
+    top: 0;
+    width: 16rem;
+    height: 72%;
+  }
+  .wrapper > img {
+    top: 3rem;
+    width: 12rem;
+    height: 15rem;
+  }
+  .cart2 {
+    transform: scale(0.7);
+    right: -2rem;
+    bottom: 0;
+  }
 }

@@ -12,6 +12,14 @@ const Slider = () => {
   return (
     <section className="s-container">
       <Swiper
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+          },
+          0: {
+            slidesPerView: 1,
+          },
+        }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
         navigation={true}
@@ -21,8 +29,8 @@ const Slider = () => {
         slidesPerGroup={1}
         loop={true}
       >
-        {SliderProducts.map((slide, i) => (
-          <SwiperSlide key={slide.i}>
+        {SliderProducts.map((slide) => (
+          <SwiperSlide key={slide.id}>
             <div className="left-s">
               <div className="name">
                 <span>{slide.name}</span>
